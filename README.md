@@ -1,5 +1,5 @@
 # replace-webpack-plugin
-### Replace blocks in HTML plugin for [Webpack](https://webpack.github.io/)
+### Replace blocks in HTML for [Webpack](https://webpack.github.io/)
 
 ### Install
 
