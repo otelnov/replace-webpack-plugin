@@ -1,4 +1,5 @@
 # replace-webpack-plugin
+[![npm version](https://badge.fury.io/js/replace-webpack-plugin.svg)](http://badge.fury.io/js/replace-webpack-plugin)
 ### Replace blocks in HTML for [Webpack](https://webpack.github.io/)
 
 ### Install
