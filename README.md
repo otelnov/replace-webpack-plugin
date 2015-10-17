@@ -68,7 +68,7 @@ module.exports = config;
 </body>
 </html>
 ```	
-#### when compilation done:
+#### result:
 ```html
 <!-- build/index.html -->
 <!DOCTYPE html>
