@@ -1,6 +1,6 @@
 {
   "name": "replace-webpack-plugin",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "description": "replace-webpack-plugin",
   "main": "index.js",
   "scripts": {
@@ -14,7 +14,10 @@
     "replace",
     "webpack",
     "html",
-    "gulp-html-replace"
+    "gulp-html-replace",
+    "webpack hash",
+    "hash",
+    "otelnov"
   ],
   "author": "Oleksandr Telnov <mail@telnov.com> (http://telnov.com/)",
   "license": "MIT",

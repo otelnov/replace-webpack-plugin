@@ -17,6 +17,7 @@ function Replace(config) {
   this.entry = config.entry;
   this.output = config.output;
   this.data = config.data;
+  this.hash = config.hash;
 }
 
 Replace.prototype.apply = function (compiler) {
@@ -35,7 +36,11 @@ Replace.prototype.apply = function (compiler) {
       });
     }
 
-    compiler.plugin('done', function () {
+    compiler.plugin('done', function (stats) {
+      if (self.hash) {
+        var reg = new RegExp('\\' + self.hash, 'g');
+        data = data.replace(reg, stats.hash);
+      }
       fs.writeFileSync(output, data);
     });
   });

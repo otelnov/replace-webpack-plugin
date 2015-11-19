@@ -22,6 +22,7 @@ To replace html content with provided string, just wrap your content with commen
 - **entry** `String` original file
 - **output** `String` new file with replaced data
 - **data** `Object` key-value pair of block identifier and new string
+- **hash** `String` string that should be replaced by webpack entry hash
 
 ### Example
 
@@ -34,6 +35,7 @@ var config = {
     new ReplacePlugin({
       skip: process.env.NODE_ENV === 'development',
       entry: 'index.html',
+      hash: '[hash]',
       output: '/build/index.html',
       data: {
         css: '<link type="text/css" rel="stylesheet" href="styles.css">',
@@ -42,7 +44,7 @@ var config = {
     })
   ]
   ...
-};  
+};
 module.exports = config;
 ```
 
@@ -65,9 +67,10 @@ module.exports = config;
   <script src="script2.js"></script>
   <script src="script3.js"></script>
   <!-- endreplace -->
+  <script src="[hash].entry.js"></script>
 </body>
 </html>
-```	
+```
 #### result:
 ```html
 <!-- build/index.html -->
@@ -80,8 +83,9 @@ module.exports = config;
 </head>
 <body>
   <script src="bundle.js"></script>
+  <script src="e8f4f5aa3f6ce31e1537.entry.js"></script>
 </body>
 </html>
-```	
+```
 
-Thanks to @VFK for the regexp 
+Thanks to @VFK for the regexp
