@@ -40,7 +40,7 @@ Replace.prototype.apply = function (compiler) {
     compiler.plugin('done', function (stats) {
       if (self.hash) {
         var reg = new RegExp('\\' + self.hash, 'g');
-        var changeWith = self.hashValue ? self.hashValue : stats.hash;
+        var changeWith = typeof self.hashValue === 'string' ? self.hashValue : stats.hash;
         data = data.replace(reg, changeWith);
       }
       fs.writeFileSync(output, data);
