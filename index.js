@@ -18,6 +18,7 @@ function Replace(config) {
   this.output = config.output;
   this.data = config.data;
   this.hash = config.hash;
+  this.hashValue = config.hashValue;
 }
 
 Replace.prototype.apply = function (compiler) {
@@ -39,7 +40,8 @@ Replace.prototype.apply = function (compiler) {
     compiler.plugin('done', function (stats) {
       if (self.hash) {
         var reg = new RegExp('\\' + self.hash, 'g');
-        data = data.replace(reg, stats.hash);
+        var changeWith = self.hashValue ? self.hashValue : stats.hash;
+        data = data.replace(reg, changeWith);
       }
       fs.writeFileSync(output, data);
     });
